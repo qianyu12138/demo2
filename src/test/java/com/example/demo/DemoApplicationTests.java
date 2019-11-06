@@ -8,6 +8,7 @@ import java.util.*;
 @SpringBootTest
 class DemoApplicationTests {
 
+    public final static String STR = "qwd";
     @Test
     void contextLoads() {
     }

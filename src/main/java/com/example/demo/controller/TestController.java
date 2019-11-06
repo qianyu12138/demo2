@@ -20,7 +20,7 @@ public class TestController {
     @ResponseBody
     @RequestMapping("/test")
     public String test1(String name){
-
+        System.out.println(name);
         return testService.getHello(name);
     }
 }
