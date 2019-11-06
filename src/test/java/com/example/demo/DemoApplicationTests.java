@@ -44,6 +44,7 @@ class DemoApplicationTests {
 
         Integer a = 1;
         MethodExecutor executor = a==1 ? holder::doIt1 : holder::doIt2;
+
         String s = executor.doIt(1);
         System.out.println(s);
     }
