@@ -14,15 +14,7 @@ public class TestService {
             return null;
         }
         //bth2
-        //feature_1
-        //bth1++
-        //f2
-        //master+
-        //master++
-        //bth1++
-        //master++
-        //bth+++
-        //master+++
+        //feature_3
         return "hello world"+name;
     }
 }
