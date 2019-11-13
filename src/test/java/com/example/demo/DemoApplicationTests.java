@@ -76,6 +76,7 @@ class DemoApplicationTests {
     }
 
     Memm1 memm = new Memm1();
+
     @Test
     public void fun3(){
         memm.print();
