@@ -74,4 +74,15 @@ class DemoApplicationTests {
             System.out.println(str);
         }
     }
+
+    Memm1 memm = new Memm1();
+    @Test
+    public void fun3(){
+        memm.print();
+    }
+
+    @Test
+    public void fun4(){
+        memm.print();
+    }
 }
