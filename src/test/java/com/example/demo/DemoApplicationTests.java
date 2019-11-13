@@ -1,11 +1,13 @@
 package com.example.demo;
 
+import com.example.demo.main.DemoApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
-@SpringBootTest
+@SpringBootTest(classes = DemoApplication.class)
 class DemoApplicationTests {
 
     public final static String STR = "qwd";
@@ -30,6 +32,21 @@ class DemoApplicationTests {
         List<String> list = Arrays.asList(arr);
         list.sort(String::compareTo);
         System.out.println(list);
+
+    }
+
+    @Test
+    public void testStream(){
+        List<String> list = Arrays.asList("1","2","23","534","2","2342","23");
+        List<Integer> collect = list.stream()
+                .sorted(Comparator.comparing(String::length))
+                .filter((s)-> true)
+                .filter((a)-> !a.startsWith("1"))
+                .map((str)-> str+="abc")
+                .map(String::length)
+//                .forEach(System.out::println);
+                .collect(Collectors.toList());
+        System.out.println(collect);
     }
 
     @Test
@@ -48,5 +65,13 @@ class DemoApplicationTests {
 
         String s = executor.doIt(1);
         System.out.println(s);
+    }
+
+    @Test
+    public void fun2(){
+        List<String> list = null;
+        for(String str:list){
+            System.out.println(str);
+        }
     }
 }

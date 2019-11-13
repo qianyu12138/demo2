@@ -17,4 +17,26 @@ public class TestService {
         //feature_3
         return "hello world"+name;
     }
+
+    /**
+     * @author a1
+     */
+    public void controller(String a) {
+        if (a != null) {
+            service(a);
+        } else {
+
+        }
+    }
+    private void service(String str){
+        System.out.println(str.length());
+    }
+
+    /**
+     * @author a2
+     */
+    public void controller2(String a){
+        service(a);
+    }
+
 }
