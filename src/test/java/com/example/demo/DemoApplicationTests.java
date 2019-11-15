@@ -84,6 +84,14 @@ class DemoApplicationTests {
 
     @Test
     public void fun4(){
-        memm.print();
+        List<String> dates = Arrays.asList("2019-01-02 20:30:59",
+                "2019-01-03 10:30:59",
+                "2019-02-02 03:30:59",
+                "2019-01-02 20:29:59",
+                "2020-01-02 10:30:59",
+                "2019-01-02 01:30:59");
+        dates = dates.stream().sorted(Comparator.comparing(String::toString)).collect(Collectors.toList());
+        dates.add(null);
+        System.out.println(dates);
     }
 }
