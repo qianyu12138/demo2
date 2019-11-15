@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.exception.CustomException;
 import com.example.demo.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,5 +35,12 @@ public class TestController {
         logger.info("{} world","hello");
         logger.error("error");
         return testService.getHello(name);
+    }
+
+    @RequestMapping("/exception")
+    public String testException(){
+        if(1==1)
+            throw new CustomException("千万不能让1==1");
+        return "error!";
     }
 }
