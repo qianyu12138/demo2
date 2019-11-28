@@ -1,7 +1,12 @@
 package com.example.demo;
 
+import com.example.demo.exception.GeneralResponse;
 import com.example.demo.main.DemoApplication;
+import com.example.demo.pojo.Book;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
@@ -93,5 +98,15 @@ class DemoApplicationTests {
         dates = dates.stream().sorted(Comparator.comparing(String::toString)).collect(Collectors.toList());
         dates.add(null);
         System.out.println(dates);
+    }
+
+    @Autowired
+    public ObjectMapper objectMapper;
+    @Test
+    public void jsonTest() throws JsonProcessingException {
+        String str = "{\"name\":\"西游记\",\"author\":{\"name\":\"罗贯中\",\"age\":40}}";
+        Book book = objectMapper.readValue(str, Book.class);
+        str = objectMapper.writeValueAsString(book);
+        System.out.println(str);
     }
 }

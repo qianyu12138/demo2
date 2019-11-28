@@ -1,15 +1,14 @@
 package com.example.demo.controller;
 
+import com.example.demo.anno.GeneralRequest;
+import com.example.demo.anno.Info;
 import com.example.demo.exception.CustomException;
 import com.example.demo.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -42,5 +41,11 @@ public class TestController {
         if(1==1)
             throw new CustomException("千万不能让1==1");
         return "error!";
+    }
+
+    @RequestMapping("/testInfo")
+    public String testInfo(@Info GeneralRequest request){
+        logger.info("{}",request.getChannel());
+        return "success";
     }
 }
