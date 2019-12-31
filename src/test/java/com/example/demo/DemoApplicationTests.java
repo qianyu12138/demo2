@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.exception.GeneralResponse;
 import com.example.demo.main.DemoApplication;
 import com.example.demo.pojo.Book;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -108,5 +107,14 @@ class DemoApplicationTests {
         Book book = objectMapper.readValue(str, Book.class);
         str = objectMapper.writeValueAsString(book);
         System.out.println(str);
+    }
+
+    @Test
+    public void fun5(){
+        String a = "a";
+        String b = "b";
+        String c = "";
+        A a_ = new A();
+        System.out.println("a"==a+c);
     }
 }
